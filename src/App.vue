@@ -1,0 +1,156 @@
+<template>
+  <div class="wrapper">
+    <nav id="sidebar" class="active">
+      <!-- Sidebar Header -->
+      <div class="sidebar-header">
+        <h1>J</h1>
+      </div>
+      <!-- Sidebar Links -->
+      <ul class="list-unstyled components">
+        <router-link tag="li" class-active="active" to="/" exact><i class="fa fa-home"></i></router-link>
+        <router-link tag="li" class-active="active" to="/about"><i class="fa fa-user"></i></router-link>
+        <router-link tag="li" class-active="active" to="/skills"><i class="fa fa-cogs"></i></router-link>
+        <router-link tag="li" class-active="active" to="/work"><i class="fa fa-briefcase"></i></router-link>
+        <router-link tag="li" class-active="active" to="/contact"><i class="fa fa-envelope"></i></router-link>
+      </ul>
+    </nav>
+    <div id="content">
+      <transition name="fade">
+        <router-view/>
+      </transition>
+    </div>
+  </div>
+</template>
+
+<script>
+import 'bootstrap/dist/css/bootstrap.css'
+import 'font-awesome/css/font-awesome.css'
+
+export default {
+  name: 'App'
+}
+</script>
+
+<style>
+
+body {
+  background-color: #444;
+  color:#fff;
+  font-family: Arial;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition-property: opacity;
+  transition-duration: .25s;
+}
+
+.fade-enter-active {
+  transition-delay: .25s;
+}
+
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+
+/* ---------------------
+      SIDEBAR STYLE
+------------------------ */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    background: #181818;
+    color: #EBECED;
+    transition: all 0.3s;
+    min-width: 60px;
+    max-width: 60px;
+    text-align: center;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px 10px;
+  background: #DC3545;
+}
+
+#sidebar .sidebar-header h1 {
+  font-weight: bold;
+  display: block;
+  color: #fff;
+  text-shadow: 2px 2px #181818;
+}
+
+#sidebar ul li {
+  list-style: none;
+  float: left;
+  margin: 10px;
+  width: 43px;
+  height: 43px;
+  line-height: 43px;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 25px;
+  position: relative;
+  transition: .5s ease-in-out;
+  color: #262626;
+  z-index: 1;
+}
+
+#sidebar ul li:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ff003b;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: .5s ease-in-out;
+  z-index: -1;
+}
+
+#sidebar ul li:hover:before {
+  transform: scale(1);
+}
+
+#sidebar ul li:hover {
+  color: #fff;
+}
+
+#sidebar ul li i {
+  color: #DC3545;
+}
+
+#sidebar ul li:hover i {
+  color: #fff;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+}
+
+#sidebar ul li:hover {
+  cursor: pointer;
+}
+
+#sidebar ul li.router-link-active {
+  background: #ff003b;
+}
+
+#sidebar ul li.router-link-active i {
+  color: #fff;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    padding: 20px;
+    min-height: 100vh;
+    width: 100%;
+    overflow: auto;
+}
+</style>
