@@ -1,6 +1,7 @@
 <template>
   <div class="center-page">
-    <span>me@justinschlabach.com</span>
+    <div class="small-text">If what I do interests you shoot me an email!</div>
+    <div>me@justinschlabach.com</div>
   </div>
 </template>
 

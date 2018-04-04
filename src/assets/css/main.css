@@ -191,10 +191,21 @@ body {
   border: 1px solid white;
 }
 
-
 .center-page {
   font-size: 4vw;
   position: absolute;
   top: 40%;
   left: 30%;
+  text-shadow: 1px 1px #181818;
+}
+
+.small-text {
+  text-align: center;
+  font-size: 1vw;
+  color: #fff;
+}
+
+.list-group-item {
+  background: #444;
+  border: none;
 }
