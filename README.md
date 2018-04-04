@@ -26,20 +26,3 @@ npm run e2e
 # run all tests
 npm test
 ```
-Color Scheme - 
-#CBC5C1
-#A2AAB0
-#EBECED
-#4C586F
-#3E3E3B
-
--- Logo --
-#9AACB7
-#3C455C
-#DDE2E3
-
-
--- Test --
-#181818
-#444
-#4d4d4e
